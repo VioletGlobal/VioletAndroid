@@ -47,5 +47,5 @@ dependencies {
     api dependency['arouter-api']
     api dependency['event-bus']
     kapt kaptcompiler['arouter-compiler']
-
+//    api project(':B_VioletNet')
 }

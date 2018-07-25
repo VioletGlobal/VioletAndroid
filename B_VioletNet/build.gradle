@@ -2,20 +2,12 @@
 //    apply plugin: 'com.android.application'
 //} else {
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'kotlin-android'
 //}
 
 android {
     compileSdkVersion androidBuild.compileSdkVersion
     buildToolsVersion androidBuild.buildToolsVersion
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
-    }
-
-    resourcePrefix "network_"
 
     splits {
         abi {
@@ -40,12 +32,6 @@ android {
         versionName "1.0"
         multiDexEnabled true
         resConfigs "en"//,"zh-rCN"
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
-            }
-        }
     }
     buildTypes {
         release {
@@ -63,19 +49,8 @@ android {
         }
     }
 }
-kapt {
-
-    arguments {
-        arg("moduleName", project.getName())
-    }
-}
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':VioletBase')
-//    api dependency['ok-http']
-   kapt kaptcompiler['arouter-compiler']
-    implementation 'com.squareup.okio:okio:1.14.0'
-
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api dependency['ok-http']
 }
-
