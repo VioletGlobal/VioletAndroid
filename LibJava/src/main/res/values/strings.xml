@@ -1,0 +1,5 @@
+<resources>
+    <string name="java_app_name">LibJava</string>
+    <string name="java_equals">==和equals的区别，equals和hashCode的区别</string>
+    <string name="java_algorithm">数据结构</string>
+</resources>

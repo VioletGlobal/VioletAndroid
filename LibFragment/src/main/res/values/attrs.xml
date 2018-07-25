@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SwiperLayout">
+
+        <attr name="edgeSide" format="enum">
+            <enum name="none" value="0" />
+            <enum name="left" value="1" />
+            <enum name="top" value="2" />
+            <enum name="right" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
+
+        <attr name="parallax" format="boolean" />
+
+        <attr name="edgeShadow" format="boolean" />
+        <attr name="edgeShadowWidth" format="dimension" />
+        <attr name="edgeShadowColor" format="color" />
+        <attr name="edgeShadowGradient" format="boolean" />
+
+    </declare-styleable>
+</resources>

@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+
+
+android {
+    compileSdkVersion androidBuild.compileSdkVersion
+    buildToolsVersion androidBuild.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion androidBuild.minSdkVersion
+        targetSdkVersion androidBuild.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        //aRouter需要
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        jcenter()
+    }
+}
+
+kapt {
+//
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api dependency['arouter-api']
+    api dependency['event-bus']
+    kapt kaptcompiler['arouter-compiler']
+
+}

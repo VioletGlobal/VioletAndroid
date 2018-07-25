@@ -1,0 +1,47 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    ext.kotlin_version = '1.2.41'
+
+
+    repositories {
+//        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+//        maven { url 'https://dl.google.com/dl/android/maven2/' }
+        mavenCentral()
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        //AOP的使用
+        classpath 'org.aspectj:aspectjtools:1.8.13'
+//        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:1.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+//        maven { url "https://jitpack.io" }
+//        maven { url 'https://dl.google.com/dl/android/maven2/' }
+        mavenCentral()
+        jcenter()
+//        maven {
+//            url "http://10.13.216.29:8081/nexus/content/repositories/jcenter/"
+//            name 'jcenter'
+//        }
+        google()
+        flatDir { dirs rootProject.rootDir.absolutePath + File.separator + 'aarLibrary' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+apply from: rootProject.rootDir.absolutePath + '/script/config.gradle'

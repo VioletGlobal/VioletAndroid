@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.violet.lib.android.event.EventLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/background_1_day_normal"
+    tools:ignore="ResourceName">
+
+    <com.violet.lib.android.event.EventImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_background"/>
+
+</com.violet.lib.android.event.EventLinearLayout>

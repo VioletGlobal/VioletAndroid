@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+   <declare-styleable name="EraserView" tools:ignore="ResourceName">
+       <attr name="eraser_view_bg" format="reference"></attr>
+       <attr name="eraser_view_fg" format="color"></attr>
+   </declare-styleable>
+
+</resources>

@@ -1,0 +1,101 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'android-aspectjx'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+
+
+ext.androidBuild = rootProject.ext.androidBuild
+ext.dependency = rootProject.ext.dependency
+//ext.annotation = rootProject.ext.annotation
+ext.kaptcompiler = rootProject.ext.kaptcompiler
+
+android {
+    compileSdkVersion androidBuild.compileSdkVersion
+    buildToolsVersion androidBuild.buildToolsVersion
+    useLibrary 'org.apache.http.legacy'
+    //启用APK拆分
+    splits{
+        //指定Gradle应如何生成每个ABI的APK
+        abi{
+            //如果将此元素设置为true，Gradle会根据您定义的屏幕密度生成APK分割。 默认值为false。
+            enable true
+            //指定一个逗号分隔的密度列表，Gradle不应为其生成单独的APK
+//            exclude[]
+            //清除默认的屏幕密度列表。 仅当与include元素组合使用时才能指定要添加的密度。
+            reset()
+            //指定Gradle应生成APK的密度的逗号分隔列表。 只能与reset（）结合使用以指定密度的精确列表
+            include 'armeabi-v7a'
+            //如果为true，Gradle会生成一个通用APK以及拆分APK。 通用APK包含单个APK中所有ABI的代码和资源。 默认值为false
+            universalApk false
+        }
+    }
+
+    dexOptions{
+        //忽略方法数限制的检查
+        jumboMode true
+
+        javaMaxHeapSize "4g"
+    }
+
+
+    defaultConfig {
+        applicationId "com.violet"
+        minSdkVersion androidBuild.minSdkVersion
+        targetSdkVersion androidBuild.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        //只保留中文，减少apk大小
+        resConfigs "en"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+
+    //跳过lint的错误提示
+    lintOptions {
+        abortOnError false
+    }
+
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+kapt {
+
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    implementation dependency['appcompat-v7']
+    implementation dependency['support-v4']
+    implementation dependency['arouter-api']
+    kapt kaptcompiler['arouter-compiler']
+    implementation project(':VioletBase')
+    implementation project(':LibProcess')
+    implementation project(':LibJava')
+    implementation project(':LibAndroid')
+    implementation project(':LibFragment')
+    implementation project(':LibPermission')
+    implementation project(':LibOpenSource')
+    implementation project(':VioletDagger')
+}

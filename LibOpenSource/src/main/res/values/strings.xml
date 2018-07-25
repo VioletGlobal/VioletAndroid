@@ -1,0 +1,4 @@
+<resources >
+    <string name="opensource_qr_code" >二维码生成，zixing的抽离</string>
+    <string name="opensource_app_name">开源项目</string>
+</resources>

@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppThemeBase">
+        <item name="android:windowAnimationStyle">@style/noActivityAnimation</item>
+    </style>
+
+    <style name="AppThemeBase" parent="VioletXTheme">
+        <!-- toolbar 高度 -->
+        <item name="actionBarSize">48dp</item>
+        <item name="colorPrimary">#00000000</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionBarItemBackground">?android:attr/selectableItemBackground</item>
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
+    </style>
+    <!--应用启动theme-->
+    <style name="Theme.Splash" parent="AppTheme">
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="AppTheme.MainTheme" parent="AppThemeBase">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:fitsSystemWindows">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <!-- toolbar返回按钮 -->
+    <style name="ToolbarNavigationButtonStyle" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:background">?android:attr/actionBarItemBackground
+        </item><!-- v21 用的是 actionBarItemBackground -->
+        <item name="android:paddingLeft">15.5dp</item>
+        <item name="android:paddingRight">25.5dp
+        </item><!--@dimen/toolbar_nav_menu_padding + 10 计算的否则不准确-->
+        <item name="android:minWidth">56dp</item>
+    </style>
+
+</resources>

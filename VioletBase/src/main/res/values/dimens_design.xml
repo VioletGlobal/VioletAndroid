@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_A">17sp</dimen>
+    <dimen name="font_B">16sp</dimen>
+    <dimen name="font_C">14sp</dimen>
+    <dimen name="font_D">12sp</dimen>
+    <dimen name="font_E">10sp</dimen>
+    <dimen name="font_F">9sp</dimen>
+    <dimen name="font_G">11sp</dimen>
+    <dimen name="font_H">23sp</dimen>
+    <dimen name="font_I">18sp</dimen>
+    <dimen name="font_J">15sp</dimen>
+    <dimen name="font_K">13sp</dimen>
+</resources>

@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion androidBuild.compileSdkVersion
+    buildToolsVersion androidBuild.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion androidBuild.minSdkVersion
+        targetSdkVersion androidBuild.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [eventBusIndex: 'com.volite.video.VEventBusIndex']
+            }
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        jcenter()
+    }
+}
+kapt {
+
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    api project(':VioletGrape')
+
+
+    api dependency['appcompat-v7']
+    api dependency['recyclerview-v7']
+    api dependency['gson']
+    //ARoute相关的jar包
+    //TODO 明天做刷新的抽出来
+    api(name: 'refresh-layout-release', ext: 'aar')
+
+    api dependency['multidex']
+
+    //TODO recycler的一个adapter的helper，之后拆成modle
+    api dependency['BaseRecyclerViewAdapterHelper']
+
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version" //Kotlin标准库
+
+    /**
+     * kotlin + rx_java+ retrofit 基本库引入
+     */
+    api dependency['dagger']
+//    api dependency['ok-http']
+    api dependency['retrofit']
+    api dependency['rx-java']
+    api dependency['converter-gson']
+    api dependency['joda-android']
+    api dependency['adapter-rxjava']
+    kapt kaptcompiler['dagger-compiler']
+//    api dependency['persistence-room']
+}

@@ -1,0 +1,41 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.violet.process">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <permission
+        android:name="process.permission.READ_CONTENT"
+        android:label="Permission for read content provider"
+        android:protectionLevel="normal" />
+
+
+    <application android:label="@string/app_name">
+
+        <service
+            android:name=".service.IProcessAidlService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":aidl" />
+
+        <provider
+            android:name=".provider.IPCProcessProvider"
+            android:authorities="com.violet.provider.IPCProcessProvider"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:process=":provider"
+            android:readPermission="process.permission.READ_CONTENT" />
+
+        <service
+            android:name=".service.TCPServerService"
+            android:exported="true"
+            android:enabled="true"
+            android:process=":socket" />
+        <service
+            android:name=".service.ProMessengerService"
+            android:exported="true"
+            android:enabled="true"
+            android:process=":message" />
+    </application>
+
+
+</manifest>

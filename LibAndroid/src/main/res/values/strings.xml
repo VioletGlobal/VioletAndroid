@@ -1,0 +1,7 @@
+<resources>
+    <string name="mAndroid_app_name">LibAndroid</string>
+    <string name="mAndroid_xml">Xml的三种解析方式</string>
+    <string name="mAndroid_design">Design的基本使用</string>
+    <string name="mAndroid_event">事件分发</string>
+    <string name="mAndroid_paint">Paint的相关测试</string>
+</resources>
