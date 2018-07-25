@@ -27,10 +27,10 @@ buildscript {
 allprojects {
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-//        maven { url "https://jitpack.io" }
+        maven { url "https://jitpack.io" }
 //        maven { url 'https://dl.google.com/dl/android/maven2/' }
+
         mavenCentral()
-        jcenter()
 //        maven {
 //            url "http://10.13.216.29:8081/nexus/content/repositories/jcenter/"
 //            name 'jcenter'

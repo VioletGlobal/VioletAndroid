@@ -66,7 +66,7 @@ kapt {
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':VioletBase')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':VioletBase')
 }
 

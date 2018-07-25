@@ -66,9 +66,9 @@ kapt {
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
-    api dependency['design']
-    api project(':VioletBase')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation dependency['design']
+    implementation project(':VioletBase')
     kapt kaptcompiler['arouter-compiler']
 }
 
