@@ -8,7 +8,7 @@ import okhttp3.Response;
  * Created by kan212 on 2018/7/25.
  */
 
-public interface VtCallBack {
+public interface VtCallback {
 
     /**
      * Called when the request could not be executed due to cancellation, a connectivity problem or

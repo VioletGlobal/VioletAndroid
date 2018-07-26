@@ -58,7 +58,7 @@ public interface VtCall extends Cloneable{
      *
      * @throws IllegalStateException when the call has already been executed.
      */
-    void enqueue(VtCallBack responseCallback);
+    void enqueue(VtCallback responseCallback);
 
     /**
      * Cancels the request, if possible. Requests that are already complete cannot be canceled.
@@ -67,7 +67,7 @@ public interface VtCall extends Cloneable{
 
     /**
      * Returns true if this call has been either {@linkplain #execute() executed} or {@linkplain
-     * #enqueue(VtCallBack) enqueued}. It is an error to execute a call more than once.
+     * #enqueue(VtCallback) enqueued}. It is an error to execute a call more than once.
      */
     boolean isExecuted();
 
