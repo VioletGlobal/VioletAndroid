@@ -66,11 +66,12 @@ dependencies {
 //    api dependency['ok-http']
     api dependency['retrofit']
     api dependency['rx-java2']
+    api dependency['rx-android2']
     api dependency['converter-gson']
     api dependency['joda-android']
     api dependency['adapter-rxjava']
     kapt kaptcompiler['dagger-compiler']
 //    api dependency['persistence-room']
-    implementation project(':B_VioletNet')
+    api project(':B_VioletNet')
 
 }

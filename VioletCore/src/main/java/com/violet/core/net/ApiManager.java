@@ -2,6 +2,7 @@ package com.violet.core.net;
 
 
 import com.violet.core.net.api.AbsApi;
+import com.violet.core.net.policy.OkHttpLibApiExecutor;
 import com.violet.net.dispatcher.VtPriority;
 import com.violet.net.http.model.Response;
 
@@ -12,6 +13,7 @@ import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;
 import io.reactivex.FlowableOnSubscribe;
 import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 
 
 /**
@@ -37,7 +39,7 @@ public class ApiManager {
 
     private ApiManager() {
         this.executor = new OkHttpLibApiExecutor();
-        this.mCommonParamsMap = ApiCommonParams.getInstance().getsApiCommonParamsMap();
+//        this.mCommonParamsMap = ApiCommonParams.getInstance().getsApiCommonParamsMap();
     }
 
     public ApiManager setExecutor(AbsApi.IApiExecutor executor) {

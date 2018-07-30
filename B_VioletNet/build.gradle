@@ -53,4 +53,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api dependency['ok-http']
+    implementation dependency['volley']
 }

@@ -42,10 +42,10 @@ ext {
             //响应式函数编程
             "rx-java"                      : "io.reactivex:rxjava:1.3.0",
 
-            "rx-java2":"io.reactivex.rxjava2:rxjava:2.1.3",
+            "rx-java2"                     : "io.reactivex.rxjava2:rxjava:2.1.3",
             //安卓的线程调度
             "rx-android"                   : 'io.reactivex:rxandroid:1.2.1',
-            "rx-android2"                   : 'io.reactivex.rxjava2:rxandroid:2.0.1',
+            "rx-android2"                  : 'io.reactivex.rxjava2:rxandroid:2.0.1',
 
 
 
@@ -55,7 +55,9 @@ ext {
             //Stetho
             "stetho"                       : 'com.facebook.stetho:stetho:1.5.0',
 
-            "persistence-room"             : "android.arch.persistence.room:runtime:${roomVersion}"
+            "persistence-room"             : "android.arch.persistence.room:runtime:${roomVersion}",
+
+            "volley"                       : "com.mcxiaoke.volley:library:1.0.19"
 
     ]
 
