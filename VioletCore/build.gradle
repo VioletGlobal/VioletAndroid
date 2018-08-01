@@ -62,7 +62,6 @@ dependencies {
     /**
      * kotlin + rx_java+ retrofit 基本库引入
      */
-    api dependency['dagger']
 //    api dependency['ok-http']
     api dependency['retrofit']
     api dependency['rx-java2']
@@ -70,7 +69,6 @@ dependencies {
     api dependency['converter-gson']
     api dependency['joda-android']
     api dependency['adapter-rxjava']
-    kapt kaptcompiler['dagger-compiler']
 //    api dependency['persistence-room']
     api project(':B_VioletNet')
 

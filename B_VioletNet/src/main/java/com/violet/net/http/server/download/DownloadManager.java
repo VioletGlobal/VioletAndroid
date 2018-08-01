@@ -2,7 +2,6 @@ package com.violet.net.http.server.download;
 
 import com.violet.net.http.model.Progress;
 import com.violet.net.http.request.Request;
-import com.sina.okhttp.OkDownloadProxy;
 
 import java.util.List;
 import java.util.Map;

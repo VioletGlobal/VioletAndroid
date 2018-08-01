@@ -54,6 +54,10 @@ android {
         }
     }
 
+    packagingOptions{
+        exclude 'META-INF/rxjava.properties'
+    }
+
     //跳过lint的错误提示
     lintOptions {
         abortOnError false
@@ -88,7 +92,6 @@ dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     implementation dependency['appcompat-v7']
     implementation dependency['support-v4']
-    implementation dependency['arouter-api']
     kapt kaptcompiler['arouter-compiler']
     implementation project(':VioletBase')
     implementation project(':LibProcess')

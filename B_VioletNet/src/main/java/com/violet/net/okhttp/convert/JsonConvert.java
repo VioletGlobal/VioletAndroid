@@ -6,7 +6,6 @@ import android.text.TextUtils;
 import com.google.gson.stream.JsonReader;
 import com.violet.net.http.convert.AbsConverter;
 import com.violet.net.okhttp.utils.Convert;
-import com.sina.simasdk.event.SIMACommonEvent;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -157,10 +156,6 @@ public class JsonConvert<T> implements AbsConverter<T, Response> {
             }
             attr.put("stime", String.valueOf(System.currentTimeMillis()));
 
-            SIMACommonEvent event = new SIMACommonEvent("_code", "apm");
-            event.setEventMethod("httplib_request")
-                    .setCustomAttributes(attr)
-                    .sendtoAll();
         } catch (Exception e){
             e.printStackTrace();
         }

@@ -4,13 +4,14 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
-//}
 
+//}
+//K线图的绘制
 android {
     compileSdkVersion androidBuild.compileSdkVersion
     buildToolsVersion androidBuild.buildToolsVersion
 
-    resourcePrefix "Dagger_"
+    resourcePrefix "stock_"
 
     splits {
         abi {
@@ -58,20 +59,15 @@ android {
         }
     }
 }
-kapt {
-
+kapt{
     arguments {
         arg("moduleName", project.getName())
     }
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':VioletBase')
-//    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':VioletBase')
     kapt kaptcompiler['arouter-compiler']
-    implementation dependency['dagger']
-    kapt kaptcompiler['dagger-compiler']
-
 }
 
