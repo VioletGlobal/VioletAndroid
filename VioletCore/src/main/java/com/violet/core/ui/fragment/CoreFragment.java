@@ -23,7 +23,6 @@ public abstract class CoreFragment extends Fragment{
             // 或者 if(findFragmentByTag(mFragmentTag) == null)
             // 正常情况下去 加载根Fragment
         }
-
     }
 
     public final View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

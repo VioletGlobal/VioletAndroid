@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <dimen name="focus_point_outside_radius" tools:ignore="ResourceName">7dp</dimen>
+    <dimen name="focus_point_inside_radius" tools:ignore="ResourceName">2dp</dimen>
+    <dimen name="focus_point_middle_radius" tools:ignore="ResourceName">4dp</dimen>
+
+</resources>

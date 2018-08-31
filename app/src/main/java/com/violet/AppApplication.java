@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.violet.dagger.DaggerApplication;
+import com.violet.imageloader.core.ImageLoader;
+import com.violet.imageloader.core.ImageLoaderConfiguration;
 import com.violet.module.IModule;
 
 import java.util.List;
@@ -17,6 +19,18 @@ public class AppApplication extends DaggerApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        //初始化自己做的imageLoader
+        initImageLoader(getApplicationContext());
+    }
+
+    private void initImageLoader(Context context) {
+        ImageLoaderConfiguration.Builder config = new ImageLoaderConfiguration.Builder(context);
+        config.threadPriority(Thread.NORM_PRIORITY - 2);
+        config.diskCacheSize(50 * 1024 * 1024); // 50 MiB
+        config.writeDebugLogs(); // Remove for release app
+
+        // Initialize ImageLoader with configuration.
+        ImageLoader.getInstance().init(config.build());
     }
 
     @Override

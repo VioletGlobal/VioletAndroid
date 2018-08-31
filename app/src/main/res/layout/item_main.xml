@@ -7,6 +7,11 @@
     android:background="#ffffff"
     app:cardElevation="10dp">
 
+    <ImageView
+        android:id="@+id/iv_imageloader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="match_parent"
@@ -14,4 +19,5 @@
         android:gravity="center"
         android:text="测试"
         android:textSize="18sp" />
+
 </android.support.v7.widget.CardView>
