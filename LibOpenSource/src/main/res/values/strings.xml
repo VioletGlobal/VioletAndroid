@@ -1,4 +1,15 @@
-<resources >
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="opensource_qr_code" >二维码生成，zixing的抽离</string>
     <string name="opensource_app_name">开源项目</string>
+
+    <string name="cube_ptr_pull_down" tools:ignore="ResourceName">下拉</string>
+    <string name="cube_ptr_pull_down_to_refresh" tools:ignore="ResourceName">下拉刷新</string>
+    <string name="cube_ptr_release_to_refresh" tools:ignore="ResourceName">释放刷新</string>
+    <string name="cube_ptr_refreshing" tools:ignore="ResourceName">加载中...</string>
+    <string name="cube_ptr_refresh_complete" tools:ignore="ResourceName">更新完成.</string>
+
+    <string name="cube_ptr_last_update" tools:ignore="ResourceName">上次更新:&#160;</string>
+    <string name="cube_ptr_seconds_ago" tools:ignore="ResourceName">&#160;秒之前</string>
+    <string name="cube_ptr_minutes_ago" tools:ignore="ResourceName">&#160;分钟之前</string>
+    <string name="cube_ptr_hours_ago" tools:ignore="ResourceName">&#160;小时之前</string>
 </resources>

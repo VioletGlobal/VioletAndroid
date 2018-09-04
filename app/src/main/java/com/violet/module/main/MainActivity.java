@@ -14,7 +14,6 @@ import com.violet.base.grape.router.RouterUrl;
 import com.violet.base.ui.activity.BaseMvpActivity;
 import com.violet.bean.ActivityBean;
 import com.violet.imageloader.core.DisplayImageOptions;
-import com.violet.imageloader.core.ImageLoader;
 import com.violet.imageloader.core.assist.ImageScaleType;
 import com.violet.module.main.adapter.MainAdapter;
 import com.violet.module.main.contract.IMainContract;
@@ -70,7 +69,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements IMai
 //        BaseLinkList.Node node = new BaseLinkList().build();
 //        node =  BaseLinkList.reverseBy2Rec(node);
 //        BaseLinkList.reList(node);
-        ImageLoader.getInstance().displayImage("http://l.sinaimg.cn/n/sports/transform/283/w650h433/20180829/0qBv-hikcahf1219184.jpg/w720q75ndr.jpg", iv_imageloader,options);
+//        ImageLoader.getInstance().displayImage("http://l.sinaimg.cn/n/sports/transform/283/w650h433/20180829/0qBv-hikcahf1219184.jpg/w720q75ndr.jpg", iv_imageloader,options);
 
     }
 

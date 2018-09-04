@@ -7,15 +7,8 @@
 
     <com.violet.module.main.widget.Rcyclerview
         android:id="@+id/recycler_main"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:clipChildren="false"
-        android:clipToPadding="false"/>
-
-    <ImageView
-        android:id="@+id/iv_imageloader"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:clipChildren="false"/>
 
 </LinearLayout>
